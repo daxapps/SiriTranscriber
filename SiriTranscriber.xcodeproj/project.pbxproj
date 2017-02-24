@@ -14,6 +14,7 @@
 		E0FFFF9C1E607E6F00C725A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0FFFF9B1E607E6F00C725A1 /* Assets.xcassets */; };
 		E0FFFF9F1E607E6F00C725A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0FFFF9D1E607E6F00C725A1 /* LaunchScreen.storyboard */; };
 		E0FFFFAA1E607E6F00C725A1 /* SiriTranscriberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFA91E607E6F00C725A1 /* SiriTranscriberTests.swift */; };
+		E0FFFFB51E608A7F00C725A1 /* TranscriptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		E0FFFFA51E607E6F00C725A1 /* SiriTranscriberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SiriTranscriberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0FFFFA91E607E6F00C725A1 /* SiriTranscriberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriTranscriberTests.swift; sourceTree = "<group>"; };
 		E0FFFFAB1E607E6F00C725A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptionsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				E0FFFF9D1E607E6F00C725A1 /* LaunchScreen.storyboard */,
 				E0FFFFA01E607E6F00C725A1 /* Info.plist */,
 				E0FFFF981E607E6F00C725A1 /* SiriTranscriber.xcdatamodeld */,
+				E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */,
 			);
 			path = SiriTranscriber;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0FFFFB51E608A7F00C725A1 /* TranscriptionsTableViewController.swift in Sources */,
 				E0FFFF9A1E607E6F00C725A1 /* SiriTranscriber.xcdatamodeld in Sources */,
 				E0FFFF941E607E6F00C725A1 /* ViewController.swift in Sources */,
 				E0FFFF921E607E6F00C725A1 /* AppDelegate.swift in Sources */,
