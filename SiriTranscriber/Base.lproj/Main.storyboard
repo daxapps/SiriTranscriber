@@ -87,7 +87,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="121" id="ago-7S-WTa"/>
                                 </constraints>
-                                <string key="text">In order for this app to run it needs you to grant permission to use the microphone and apeech. You can always change this later on in settings.</string>
+                                <string key="text">In order for this app to run it needs you to grant permission to use the microphone and speech. You can always change this later on in settings.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -102,6 +102,9 @@
                                 <state key="normal" title="Grant Permission">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="permissionBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHH-od-9kO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.3340931432" green="0.8790114389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,6 +116,10 @@
                             <constraint firstItem="B93-lf-QeR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rm2-Pd-KdB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="permissionBtn" destination="b4H-7s-TR0" id="ehP-QP-YyK"/>
+                        <outlet property="permissionLbl" destination="B93-lf-QeR" id="nQz-pU-9F8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
