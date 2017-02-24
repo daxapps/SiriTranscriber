@@ -20,6 +20,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     var recFileUrl: URL!
     var textFileUrl: URL!
     
+    var transcribed: Bool = false
+    
     var audioPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
@@ -108,6 +110,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
 
     override func viewWillDisappear(_ animated: Bool) {
         audioPlayer?.stop()
+        if transcribed {
+            CoreDataHelper().storeTranscription(audioFileUrlString: String(describing: recFileUrl), textFileUrlString: String(describing: textFileUrl))
+        }
     }
     
     // MARK: Transcribe
@@ -128,12 +133,14 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
                 self.textView.text = text
                 do {
                     try text.write(to: self.textFileUrl, atomically: true, encoding: String.Encoding.utf8)
+                    self.transcribed = true
                 } catch {
                     
                 }
             }
         }
     }
+    
 
     /*
     // MARK: - Navigation

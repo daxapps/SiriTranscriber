@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class CoreDataHelper {
     
@@ -21,4 +22,34 @@ class CoreDataHelper {
             }
         }
     }
+    
+    func getContext() -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
+    func storeTranscription(audioFileUrlString: String, textFileUrlString: String) {
+        let context = getContext()
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Transcription", in: context)
+        
+        let transc = NSManagedObject(entity: entity!, insertInto: context)
+        transc.setValue(audioFileUrlString, forKey: "audioFileUrlString")
+        transc.setValue(textFileUrlString, forKey: "textFileUrlString")
+        
+        do {
+            try context.save()
+            print("DAX: Saved")
+        } catch {
+            
+        }
+        
+    }
 }
+
+
+
+
+
+
+
