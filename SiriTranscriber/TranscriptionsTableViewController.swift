@@ -25,6 +25,8 @@ class TranscriptionsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         checkPermissions()
+        CoreDataHelper()
+        
     }
 
     override func didReceiveMemoryWarning() {

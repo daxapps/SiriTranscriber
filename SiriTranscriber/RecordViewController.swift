@@ -15,8 +15,10 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var textView: UITextView!
     
+    
     var audioRec: AVAudioRecorder?
     var recFileUrl: URL!
+    var textFileUrl: URL!
     
     var audioPlayer: AVAudioPlayer?
 
@@ -24,7 +26,10 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        recFileUrl = Utilities.getAudioFileUrl()
+        let utils = Utilities()
+        recFileUrl = utils.getAudioFileUrl()
+        textFileUrl = utils.getTextFileUrl()
+        
         print("DAX" + recFileUrl!.absoluteString)
         recordAudio()
     }
@@ -121,6 +126,11 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
             if result.isFinal {
                 let text = result.bestTranscription.formattedString
                 self.textView.text = text
+                do {
+                    try text.write(to: self.textFileUrl, atomically: true, encoding: String.Encoding.utf8)
+                } catch {
+                    
+                }
             }
         }
     }

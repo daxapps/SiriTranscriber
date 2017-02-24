@@ -17,6 +17,8 @@
 		E0FFFFB51E608A7F00C725A1 /* TranscriptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */; };
 		E0FFFFB71E60B75100C725A1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFB61E60B75100C725A1 /* Utilities.swift */; };
 		E0FFFFB91E60C45E00C725A1 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFB81E60C45E00C725A1 /* RecordViewController.swift */; };
+		E0FFFFBC1E60EFDB00C725A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FFFFBB1E60EFDB00C725A1 /* CoreData.framework */; };
+		E0FFFFBE1E60F01B00C725A1 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFBD1E60F01B00C725A1 /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptionsTableViewController.swift; sourceTree = "<group>"; };
 		E0FFFFB61E60B75100C725A1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E0FFFFB81E60C45E00C725A1 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		E0FFFFBB1E60EFDB00C725A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E0FFFFBD1E60F01B00C725A1 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0FFFFBC1E60EFDB00C725A1 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +75,7 @@
 				E0FFFF901E607E6F00C725A1 /* SiriTranscriber */,
 				E0FFFFA81E607E6F00C725A1 /* SiriTranscriberTests */,
 				E0FFFF8F1E607E6F00C725A1 /* Products */,
+				E0FFFFBA1E60EFDB00C725A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +101,7 @@
 				E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */,
 				E0FFFFB61E60B75100C725A1 /* Utilities.swift */,
 				E0FFFFB81E60C45E00C725A1 /* RecordViewController.swift */,
+				E0FFFFBD1E60F01B00C725A1 /* CoreDataHelper.swift */,
 			);
 			path = SiriTranscriber;
 			sourceTree = "<group>";
@@ -106,6 +113,14 @@
 				E0FFFFAB1E607E6F00C725A1 /* Info.plist */,
 			);
 			path = SiriTranscriberTests;
+			sourceTree = "<group>";
+		};
+		E0FFFFBA1E60EFDB00C725A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0FFFFBB1E60EFDB00C725A1 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +231,7 @@
 				E0FFFFB51E608A7F00C725A1 /* TranscriptionsTableViewController.swift in Sources */,
 				E0FFFF9A1E607E6F00C725A1 /* SiriTranscriber.xcdatamodeld in Sources */,
 				E0FFFF941E607E6F00C725A1 /* ViewController.swift in Sources */,
+				E0FFFFBE1E60F01B00C725A1 /* CoreDataHelper.swift in Sources */,
 				E0FFFFB91E60C45E00C725A1 /* RecordViewController.swift in Sources */,
 				E0FFFFB71E60B75100C725A1 /* Utilities.swift in Sources */,
 				E0FFFF921E607E6F00C725A1 /* AppDelegate.swift in Sources */,
@@ -428,6 +444,7 @@
 				E0FFFFB01E607E6F00C725A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0FFFFB11E607E6F00C725A1 /* Build configuration list for PBXNativeTarget "SiriTranscriberTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +453,7 @@
 				E0FFFFB31E607E6F00C725A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
