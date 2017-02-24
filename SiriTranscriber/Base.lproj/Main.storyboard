@@ -56,8 +56,29 @@
                     <view key="view" contentMode="scaleToFill" id="A0A-6o-xQv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ac-ZJ-4Hz">
+                                <rect key="frame" x="107" y="269" width="106" height="30"/>
+                                <state key="normal" title="Stop Recording"/>
+                                <connections>
+                                    <action selector="stopButtonClicked:" destination="DPo-Bf-jpi" eventType="touchUpInside" id="MI9-Y6-IrY"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lWR-Sx-9Cc">
+                                <rect key="frame" x="142" y="208" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.94848805670000003" green="0.28875610229999998" blue="0.0030317916529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ac-ZJ-4Hz" firstAttribute="centerX" secondItem="A0A-6o-xQv" secondAttribute="centerX" id="pCQ-lI-58y"/>
+                            <constraint firstItem="6Ac-ZJ-4Hz" firstAttribute="centerY" secondItem="A0A-6o-xQv" secondAttribute="centerY" id="wui-sI-mam"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="lWR-Sx-9Cc" id="3VY-ff-84v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrN-D2-1ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

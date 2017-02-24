@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import AVFoundation
+import Speech
 
 class Utilities {
     

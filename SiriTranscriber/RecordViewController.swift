@@ -12,8 +12,12 @@ import Speech
 
 class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var audioRec: AVAudioRecorder?
     var recFileUrl: URL!
+    
+    var audioPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +25,68 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         // Do any additional setup after loading the view.
         recFileUrl = Utilities.getAudioFileUrl()
         print("DAX" + recFileUrl!.absoluteString)
+        recordAudio()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Audio Recording
+    
+    @IBAction func stopButtonClicked(_ sender: UIButton) {
+        stopRecording(sender: sender)
+    }
+    
+    func stopRecording(sender: UIButton) {
+        audioRec?.stop()
+        sender.titleLabel?.text = "Finished"
+        sender.isEnabled = false
+        //sender.alpha = 0.2
+        activityIndicator.stopAnimating()
+        
+    }
+    
+    func recordAudio() {
+        let session = AVAudioSession.sharedInstance()
+        
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
+            try session.setActive(true)
+            
+            let settings = [AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                            AVSampleRateKey: 44100,
+                            AVNumberOfChannelsKey: 2,
+                            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+            ]
+            
+            audioRec = try AVAudioRecorder(url: recFileUrl, settings: settings)
+            audioRec?.delegate = self
+            audioRec?.record()
+            activityIndicator.startAnimating()
+            
+            
+        } catch let error {
+            //failed to record
+            print("DAX: failed recording \(error)")
+            recordingEnded(success: false)
+        }
+    }
+    
+    func recordingEnded(success: Bool) {
+        audioRec?.stop()
+        if success {
+            do {
+                //play and transcribe audio
+                audioPlayer?.stop()
+                audioPlayer = try AVAudioPlayer(contentsOf: recFileUrl)
+                audioPlayer?.play()
+                print("DAX: Recording")
+            } catch let error {
+                print(error)
+            }
+        }
     }
     
     //MARK: Audio Delegate
@@ -37,9 +98,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
             recordingEnded(success: true)
         }
     }
-    
-    func recordingEnded (success: Bool) {
-        
+
+    override func viewWillDisappear(_ animated: Bool) {
+        audioPlayer?.stop()
     }
     
 
