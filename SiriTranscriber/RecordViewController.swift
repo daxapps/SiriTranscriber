@@ -13,6 +13,7 @@ import Speech
 class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var textView: UITextView!
     
     var audioRec: AVAudioRecorder?
     var recFileUrl: URL!
@@ -82,6 +83,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
                 audioPlayer?.stop()
                 audioPlayer = try AVAudioPlayer(contentsOf: recFileUrl)
                 audioPlayer?.play()
+                transcribeAudio()
                 print("DAX: Recording")
             } catch let error {
                 print(error)
@@ -103,6 +105,25 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         audioPlayer?.stop()
     }
     
+    // MARK: Transcribe
+    func transcribeAudio() {
+        let recogniser = SFSpeechRecognizer()
+        let request = SFSpeechURLRecognitionRequest(url: recFileUrl)
+        
+        recogniser?.recognitionTask(with: request) {
+            [unowned self] (result, error) in
+            
+            guard let result = result else {
+                print("DAX " + String(describing: error!))
+                return
+            }
+            
+            if result.isFinal {
+                let text = result.bestTranscription.formattedString
+                self.textView.text = text
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
