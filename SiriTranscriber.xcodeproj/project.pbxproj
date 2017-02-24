@@ -16,6 +16,7 @@
 		E0FFFFAA1E607E6F00C725A1 /* SiriTranscriberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFA91E607E6F00C725A1 /* SiriTranscriberTests.swift */; };
 		E0FFFFB51E608A7F00C725A1 /* TranscriptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */; };
 		E0FFFFB71E60B75100C725A1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFB61E60B75100C725A1 /* Utilities.swift */; };
+		E0FFFFB91E60C45E00C725A1 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FFFFB81E60C45E00C725A1 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		E0FFFFAB1E607E6F00C725A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptionsTableViewController.swift; sourceTree = "<group>"; };
 		E0FFFFB61E60B75100C725A1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		E0FFFFB81E60C45E00C725A1 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				E0FFFF981E607E6F00C725A1 /* SiriTranscriber.xcdatamodeld */,
 				E0FFFFB41E608A7F00C725A1 /* TranscriptionsTableViewController.swift */,
 				E0FFFFB61E60B75100C725A1 /* Utilities.swift */,
+				E0FFFFB81E60C45E00C725A1 /* RecordViewController.swift */,
 			);
 			path = SiriTranscriber;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				E0FFFFB51E608A7F00C725A1 /* TranscriptionsTableViewController.swift in Sources */,
 				E0FFFF9A1E607E6F00C725A1 /* SiriTranscriber.xcdatamodeld in Sources */,
 				E0FFFF941E607E6F00C725A1 /* ViewController.swift in Sources */,
+				E0FFFFB91E60C45E00C725A1 /* RecordViewController.swift in Sources */,
 				E0FFFFB71E60B75100C725A1 /* Utilities.swift in Sources */,
 				E0FFFF921E607E6F00C725A1 /* AppDelegate.swift in Sources */,
 			);

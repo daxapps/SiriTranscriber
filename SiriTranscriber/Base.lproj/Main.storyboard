@@ -34,12 +34,34 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Transcriptions" id="3eI-Rw-tIr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yyy-ZU-ye9"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yyy-ZU-ye9">
+                            <connections>
+                                <segue destination="DPo-Bf-jpi" kind="show" id="VQB-aZ-SmB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEL-IO-B7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="826.875" y="-44.366197183098592"/>
+        </scene>
+        <!--Record View Controller-->
+        <scene sceneID="lHe-RY-vsM">
+            <objects>
+                <viewController id="DPo-Bf-jpi" customClass="RecordViewController" customModule="SiriTranscriber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eLB-QT-CT5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q6j-vj-elt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A0A-6o-xQv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrN-D2-1ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1681" y="-308"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="jIj-dR-nut">
@@ -123,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="79"/>
+            <point key="canvasLocation" x="1946" y="472"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="226-sy-fXr">
