@@ -45,6 +45,24 @@ class CoreDataHelper {
         }
         
     }
+    
+    func getTranscriptions() -> [NSManagedObject]? {
+        
+        let fetchRequest: NSFetchRequest<Transcription> = Transcription.fetchRequest()
+        
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            print("DAX: Number of Results = \(searchResults.count)")
+            
+            for trans in searchResults as [NSManagedObject] {
+                print("DAX Result: \(trans.value(forKey: "audioFileUrlString"))")
+                
+            }
+            return searchResults as [NSManagedObject]
+        } catch {
+            return nil
+        }
+    }
 }
 
 
